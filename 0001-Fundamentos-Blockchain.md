@@ -8,7 +8,7 @@ Una blockchain es un libro mayor público, archivo, o datos transaccionales, dis
 La palabra "block" parte de "blockchain" son un set de transacciones que son verificados por los nodos y eventualmente agregados a la blockchain. 
 Y la palabra "chain", se refiere al hecho de que cada bloque ("block") transaccional también contiene una prueba (un hash criptográfico) de las transacciones del bloque anterior. Éste patrón de capturar el bloque previo en el bloque actual se ve representado en todos los bloques hasta el origen de la cadena de bloques ("el bloque génesis") creando un registro públicamente verificable y a prueba de manipulaciones de todas las transacciones. 
 
-![enter image description here](https://developer.algorand.org/docs/imgs/blockchain-diagram.png)
+![enter image description here](https://github.com/jmsalinas88/algorand/blob/main/static/bloques.png)
 
 Prácticamente, ésto significa que si se trata de manipular incluso un simple registro, en cualquier parte de la cadena, será identificable y rechazado por los nodos de la red. 
 
