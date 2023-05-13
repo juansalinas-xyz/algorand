@@ -4,8 +4,8 @@
 - [¿Qué es una blockchain?](#qué-es-una-blockchain)
 - [Bloques](#bloques)
   - [¿Cómo se agregan los bloques a la cadena?](#cómo-se-agregan-los-bloques-a-la-cadena)
-  - [¿Cómo blockchain beneficia mis aplicaciones?](#cómo-blockchain-beneficia-mis-aplicaciones)
-  - [Ejemplo de caso de uso: La subasta de Alice y Bob](#ejemplo-de-caso-de-uso-la-subasta-de-alice-y-bob)
+- [¿Cómo blockchain beneficia mis aplicaciones?](#cómo-blockchain-beneficia-mis-aplicaciones)
+- [Ejemplo de caso de uso: La subasta de Alice y Bob](#ejemplo-de-caso-de-uso-la-subasta-de-alice-y-bob)
 
 
 # ¿Qué es una blockchain?
@@ -27,7 +27,7 @@ Cada nodo corre un software que contiene las instrucciones necesarias para verif
 
 La naturaleza de éstas instrucciones  son uno de los factores diferenciales de las diferentes blockchains. Aprenderemos sobre el protocolo de consenso de Algorand más adelante en ésta guía y cómo difiere de las otras blockchains. 
 
-## ¿Cómo blockchain beneficia mis aplicaciones?
+# ¿Cómo blockchain beneficia mis aplicaciones?
 
 Blockchain es una tecnología de innovación, en cómo transferimos valor. Entonces, si tu aplicación intercambia valor de alguna forma, blockchain podría ser una tecnología candidata para impulsar tu aplicación al siguiente nivel. 
 
@@ -51,7 +51,7 @@ A continuación, podemos encontrar algunas características de blockchain que la
  
 Por ejemplo, enviando un pago internacional a través de bancos, usualmente toma días y es de alto costo, porque hay muchos intermediarios involucrados para garantizar que el valor es enviado con seguridad. Costos altos, y generalmente ineficiencia son las características que encontramos ante éste escenario, y blockchain puede mejorarlas, esto no quiere decir que el resto de las características no son importantes. Por ejemplo, no deseamos costos bajos a expensas de la seguridad, pero si sólo la seguridad importara, podríamos decir que el proceso actual es lo suficientemente bueno (asumiendo que confiamos en el banco que hace la transferencia). En éste escenario, blockchain mejora las deficiencias, sin escatimar en otro lugar. 
 
-## Ejemplo de caso de uso: La subasta de Alice y Bob
+# Ejemplo de caso de uso: La subasta de Alice y Bob
 
 Alice es una artista talentosa, buscando ampliar su cantidad de fans y su reputación como artista.
 Bob es un developer y es amigo de Alice, y la quiere ayudar. 
