@@ -10,7 +10,7 @@
 
 # ¿Qué es una blockchain?
 
-Una blockchain es un registro distribuido de transacciones que se almacena en múltiples computadoras llamados nodos, conectados en una red. Los nodos trabajan en conjunto utilizando el mismo software y reglas para verificar las transacciones y agregarlas al registro de forma segura e inmutable.
+Una blockchain es un registro distribuido de transacciones que se almacena en múltiples computadoras llamadas nodos, conectados en una red. Los nodos trabajan en conjunto utilizando el mismo software y reglas para verificar las transacciones y agregarlas al registro de forma segura e inmutable.
 
 
 # Bloques
