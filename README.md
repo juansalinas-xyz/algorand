@@ -6,6 +6,9 @@
   - [¿Cómo se agregan los bloques a la cadena?](#cómo-se-agregan-los-bloques-a-la-cadena)
 - [¿Cómo blockchain beneficia mis aplicaciones?](#cómo-blockchain-beneficia-mis-aplicaciones)
 - [Ejemplo de caso de uso: La subasta de Alice y Bob](#ejemplo-de-caso-de-uso-la-subasta-de-alice-y-bob)
+- [¿Por qué Algorand?](#por-qué-algorand)
+- [Los principios fundacionales](#los-principios-fundacionales)
+- [El protocolo de concenso](#el-protocolo-de-concenso)
 
 
 # ¿Qué es una blockchain?
@@ -73,3 +76,20 @@ Alice vende sus obras de arte por medio de las personas conocidas de su entorno,
  La subasta será programada en la blockchain para que todas puedan verla y verificarla. Alice puede garantizar a sus compradores que no serán estafados y viceversa sin necesidad de conocerlos personalmente. Dado que eliminan la necesidad de que en tercero garantice el comercio, pueden reducir sustancialmente las tarifas y Alice puede ganar más dinero. 
 
  Alice puede concentrarse en publicitar su trabajo a una audiencia tan amplia como quiera a través de sus cuentas de redes sociales o en cualquier otro lugar sin necesidad de reunirse individualmente y generar confianza con compradores potenciales.
+
+ # ¿Por qué Algorand? 
+
+ Hasta aquí, hemos discutido sobre la tecnología blockchain y los beneficios que ofrece a las aplicaciones que transfieren valor. Es importante mencionar, que no todas las blockchains son creadas de igual manera y no todas pueden ofrecer el mismo grado de beneficios. 
+
+ Como developer, es importante hacer una investigación y elegir una blockchain en la que pueda confiar para todas las propiedades que una blockchain promete. 
+
+ En esta sección, describiremos algunas de las principales categorías para evaluar al elegir una blockchain y explicaremos cómo le va a Algorand en cada una de estas categorías. 
+
+ # Los principios fundacionales
+
+ Algorand fue fundado por Silvio Micali, ganador del premio Turing, co-inventor del protocolo de Prueba de conocimiento cero, y lider de renombre mundial en el campo de la criptografia y la seguridad de la información. 
+
+ Fundó Algorand con la visión de democratizar las finanzas y complir la promesa de blockchain.
+
+ # El protocolo de concenso
+ 
