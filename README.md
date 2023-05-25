@@ -9,6 +9,12 @@
 - [¿Por qué Algorand?](#por-qué-algorand)
 - [Los principios fundacionales](#los-principios-fundacionales)
 - [El protocolo de concenso](#el-protocolo-de-concenso)
+- [Proof-of-stake vs proof-of-work](#proof-of-stake-vs-proof-of-work)
+- [La moneda nativa](#la-moneda-nativa)
+- [Fees](#fees)
+- [Abierto y sin permisos](#abierto-y-sin-permisos)
+- [Descentralización](#descentralización)
+- [Forking](#forking)
 
 
 # ¿Qué es una blockchain?
@@ -92,4 +98,51 @@ Alice vende sus obras de arte por medio de las personas conocidas de su entorno,
  Fundó Algorand con la visión de democratizar las finanzas y complir la promesa de blockchain.
 
  # El protocolo de concenso
+ El problema de muchas blockchains es que sacrifican al menos una de las propiedades claves de **seguridad**, **escalabilidad** y **descentralización**, conocido como el trilema de blockchain. Silvio Micali y su equipo resolvieron el trilema de blockchain inventando un nuevo protoloco de concenso llamado **Pure Proof of Stake (PPoS)**, que es el protocolo de concenso que utiliza Algorand. 
+
+ El protocolo de consenso de Algorand funciona mediante la selección de un proponente de bloque y un conjunto de comités de votación en cada ronda de bloque, para proponer un bloque y validar la propuesta, respectivamente. El proponente y los comités se eligen al azar del grupo de todos los poseedores de tokens (las cuentas que tienen algos), y la probabilidad de ser elegido es proporcional a la participación de la cuenta en la red (es decir, cuántos algos tiene en relación con el total). Hay un montón de algoritmos criptográficos realmente geniales que intervienen en este proceso, con nombres elegantes como "funciones aleatorias verificables" y "clasificación criptográfica" para garantizar que la votación sea justa y que el sistema en general sea muy seguro.
+
+ # Proof-of-stake vs proof-of-work
+
+ La mayoría de las blockchains optan por la categoría general de proof-of-stake o proof-of-work.
  
+ En pocas palabras, una blockchain **proof-of-stake** ofrece a los usuarios que tienen más participación (quien tiene más monedas nativa del sistema) más influencia para proponer y validar nuevos bloques, usualmente, por medio de un mecanismo de votos. 
+
+ En **proof-of-work**, los nodos compiten para resolver un problema criptográfico y ofrecen su solución junto con una propuesta de un nuevo bloque (conocido como "minería" y los nodos conocidos como "mineros"). El ganador es recompensado con la moneda del sistema y el bloque forma parte de la blockchain.
+
+ A raíz de que **proof-of-work** requiere que se resuelva un problema criptográfico antes que nadie, el poder de cómputo juega un papel importante en la estrategia para ganar. Esto ha generado muchos debates sobre el consumo de energía y sus efectos sobre el clima. 
+
+ La mayoría de los protocolos **proof-of-stake**, incluyendo el protocolo de Algorand, no requiere grandes cantidades de energía para producir un bloque. 
+
+ # La moneda nativa
+ Cada blockchain tiene su propia moneda nativa que juega un papel fundamental para incentivar el buen comportamiento de la red. La moneda nativa de Algorand se llama **Algo**. 
+
+ Si posee Algos, puede registrarse para participar en el consenso, lo que significa que participará en el proceso de propuesta y votación de nuevos bloques. 
+
+ Algo también actua como un token de utilidad. Cuando esta creando una aplicación necesita algos para pagar las tarifas de transacción y como saldo mínimo si desea almacenar datos en la blockchain. 
+
+ El costo de estas tarifas y saldos mínimos es muy bajo, fracciones de centavo en la mayoría de los casos.
+
+ # Fees
+ Los fees son calculados basado en el tamaño de la transacción y un usuario puede elegir aumentar el fee para ayudar a priorizar la aceptación dentro de un bloque cuando el tráfico de la red es alto y los bloques estan constantemente llenos. En Algorand, no existe el concepto de gas fee. 
+
+ El fee mínimo por una transacción son solo 1.000 microAlgos o 0.001 Algos. 
+
+ # Abierto y sin permisos
+Anteriormente, comparamos una blockchain que es distribuída con un libro mayor tradicional que es propiedad de una sola entidad. Técnicamente, una blockchain podría ser propiedad de unas pocas entidades y operarlo, pero no sería una blockchain muy buena, ya que un conjunto de nodos centralizados podría manipular fácilmente el estado de la blockchain. 
+
+Algorand es completamente abierto y sin permisos. Cualquiera, en cualquier parte del mundo, que sea propietario de Algos puede participar en el concenso. 
+
+# Descentralización
+Si todas las personas que ejecutan nodos son la misma empresa o conjunto de empresas, entonces nos encontramos en una situación similar a la de tener una base de datos centralizada, controlada por unas pocas personas. 
+
+En Algorand, dado que el protocolo es abierto y no requiere permisos, los nodos pueden existir y de hecho, existen en todo el mundo.
+
+# Forking
+Forking es cuando una blockchain sufre una bifurcación. A veces, esta bifurcación es intencional, como cuando una parte importante de la comunidad quiere cambiar los fundamentos del protocolo. Otras veces, esta bifurcación es accidental y ocurre cuando dos mineros encuentran un bloque al mismo tiempo. 
+
+Eventualmente, una de las ramas será abandonada, lo que significa que todas las transacciones que ocurrieron desde esa bifurcación en la rama abandonada no serán validadas. Esto tiene implicaciones importantes para la finalización de la transacción. 
+
+Dado que Algorand es proof-of-stake y utiliza un mecanismo de votación para validar los bloques, el forking es imposible. En el peor de los casos, si el comité tarda más en llegar a un acuerdo, la blockchain se relentizará o se detendrá temporalmente. 
+
+
