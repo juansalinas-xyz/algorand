@@ -25,7 +25,7 @@
 
 # ¿Qué es una blockchain?
 
-Una blockchain es un registro distribuido de transacciones que se almacena en múltiples computadoras llamados nodos, conectados en una red. Los nodos trabajan en conjunto utilizando el mismo software y reglas para verificar las transacciones y agregarlas al registro de forma segura e inmutable.
+Una blockchain es un registro distribuido de transacciones que se almacena en múltiples computadoras llamadas nodos, conectados en una red. Los nodos trabajan en conjunto utilizando el mismo software y reglas para verificar las transacciones y agregarlas al registro de forma segura e inmutable.
 
 
 # Bloques
@@ -170,5 +170,4 @@ Algorad cuenta con los mejores investigadores y developers del mundo que desarro
 
 # Gobernanza
 La Fundación Algorand, una organización sin fines de lucro que lanzó Algorand MainNet, gobierna la red de Algorand y está comprometida a continuar descentralizándola y poner más toma de decisiones en manos de la comunidad de Algorand en general.
-
 
