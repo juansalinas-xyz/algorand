@@ -15,6 +15,12 @@
 - [Abierto y sin permisos](#abierto-y-sin-permisos)
 - [Descentralización](#descentralización)
 - [Forking](#forking)
+- [Rendimiento](#rendimiento)
+- [Finalidad](#finalidad)
+- [Características principales](#características-principales)
+- [Herramientas para developers](#herramientas-para-developers)
+- [El equipo y el ecosistema](#el-equipo-y-el-ecosistema)
+- [Gobernanza](#gobernanza)
 
 
 # ¿Qué es una blockchain?
@@ -85,11 +91,9 @@ Alice vende sus obras de arte por medio de las personas conocidas de su entorno,
 
  # ¿Por qué Algorand? 
 
- Hasta aquí, hemos discutido sobre la tecnología blockchain y los beneficios que ofrece a las aplicaciones que transfieren valor. Es importante mencionar, que no todas las blockchains son creadas de igual manera y no todas pueden ofrecer el mismo grado de beneficios. 
+Hasta ahora, hemos discutido la tecnología blockchain y los beneficios que ofrece a las aplicaciones que transfieren valor. Es importante destacar que no todas las blockchains son iguales y no todas ofrecen los mismos beneficios.
 
- Como developer, es importante hacer una investigación y elegir una blockchain en la que pueda confiar para todas las propiedades que una blockchain promete. 
-
- En esta sección, describiremos algunas de las principales categorías para evaluar al elegir una blockchain y explicaremos cómo le va a Algorand en cada una de estas categorías. 
+Como desarrollador, es importante investigar y elegir una blockchain en la que se pueda confiar para todas las propiedades que promete. En esta sección, describiremos las principales categorías para evaluar al elegir una blockchain y explicaremos cómo se desempeña Algorand en cada una de ellas.
 
  # Los principios fundacionales
 
@@ -105,7 +109,7 @@ Alice vende sus obras de arte por medio de las personas conocidas de su entorno,
  # Proof-of-stake vs proof-of-work
 
  La mayoría de las blockchains optan por la categoría general de proof-of-stake o proof-of-work.
- 
+
  En pocas palabras, una blockchain **proof-of-stake** ofrece a los usuarios que tienen más participación (quien tiene más monedas nativa del sistema) más influencia para proponer y validar nuevos bloques, usualmente, por medio de un mecanismo de votos. 
 
  En **proof-of-work**, los nodos compiten para resolver un problema criptográfico y ofrecen su solución junto con una propuesta de un nuevo bloque (conocido como "minería" y los nodos conocidos como "mineros"). El ganador es recompensado con la moneda del sistema y el bloque forma parte de la blockchain.
@@ -144,5 +148,27 @@ Forking es cuando una blockchain sufre una bifurcación. A veces, esta bifurcaci
 Eventualmente, una de las ramas será abandonada, lo que significa que todas las transacciones que ocurrieron desde esa bifurcación en la rama abandonada no serán validadas. Esto tiene implicaciones importantes para la finalización de la transacción. 
 
 Dado que Algorand es proof-of-stake y utiliza un mecanismo de votación para validar los bloques, el forking es imposible. En el peor de los casos, si el comité tarda más en llegar a un acuerdo, la blockchain se relentizará o se detendrá temporalmente. 
+
+# Rendimiento
+Desea elegir una blockchain que pueda escalar y manejar un alto rendimiento para que sus usuarios no experimenten largos tiempos de espera al interactuar con su aplicación. 
+
+En Algorand, los bloques se producen cada 3,9 segundos y pueden contener hasta 25.000 transacciones, lo que da como resultado un rendimiento al rededor de 6.000 transacciones por segundo (6.000 TPS)
+
+# Finalidad
+En blockchains proof-of-work, dado que el forking es una posibilidad, las transacciones no pueden considerarse definitivas hasta que transcurre un cierto periodo de tiempo. Esto significa que el rendimiento real de este tipo de blockchains se ve afectado por un retrazo en el fin de la transacción. Los procesos posteriores en una aplicación deben tener esto en cuenta para evitar problemas complejos si una transacción termina siendo inválida. 
+
+Como mencionamos anteriormente, Algorand no tiene forking, por lo que las transacciones son definitivas tan pronto como se confirman en un bloque. Un rendimiento de 6.000 TPS significa en realidad 6.000 transacciones finalizadas por segundo. 
+
+# Características principales
+Algorand facilita la tokenización, la transferencia y la programación de condiciones en cualquier instrumento de valor. Cree tokens fungibles y no fungibles con una sola transacción (no se requiere progrmar un smart contract). O programe aplicaciones descentralizadas sofisticadas (dApps) con smart contracts de Algorand.
+
+# Herramientas para developers
+Los developers pueden escribir smart contracts en Python y pueden usar uno de cuatro SDKs (Python, JavaScript, Golang, Java) para conectar a on-chain assets o aplicaciones. 
+
+# El equipo y el ecosistema
+Algorad cuenta con los mejores investigadores y developers del mundo que desarrollan y mejoran activamente el protocolo central de Algorand. La Fundación Algorand invierte mucho en la gobernanza y el crecimiento del ecosistema para promover valor a largo plazo para todos los poseedores de algo. 
+
+# Gobernanza
+La Fundación Algorand, una organización sin fines de lucro que lanzó Algorand MainNet, gobierna la red de Algorand y está comprometida a continuar descentralizándola y poner más toma de decisiones en manos de la comunidad de Algorand en general.
 
 
