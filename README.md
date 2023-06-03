@@ -219,7 +219,7 @@ Algorand provee una herramienta para desarrollar smart contracts llamada **AlgoK
 AlgoKit es la herramienta principal utilizada por la comunidad de Algorand para desarrollar smart contracts en la blockchain de Algorand. Proporciona las capacidades para desarrollar, probar e implementar smart contracts de Algorand en minutos. 
 
 # Interactuando rapidamente con Algorand
-A continuación, veremos cómo podemos interactuar con Algorand rápidamente con el SDK para JavaScript. Para lograr esto, construiremos un pequeño proyecto en node. 
+A continuación, veremos cómo podemos interactuar con Algorand rápidamente con el SDK para JavaScript. Para lograr esto, construiremos un pequeño proyecto en node, ver aquí.
 
 
 
