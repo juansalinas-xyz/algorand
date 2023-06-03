@@ -21,6 +21,11 @@
 - [Herramientas para developers](#herramientas-para-developers)
 - [El equipo y el ecosistema](#el-equipo-y-el-ecosistema)
 - [Gobernanza](#gobernanza)
+- [¿Qué es una dApp?](#qué-es-una-dapp)
+- [Smart Contracts](#smart-contracts)
+- [¿Por dónde empezar para desarrollar con Algorand?](#por-dónde-empezar-para-desarrollar-con-algorand)
+- [AlgoKit](#algokit)
+- [Interactuando rapidamente con Algorand](#interactuando-rapidamente-con-algorand)
 
 
 # ¿Qué es una blockchain?
@@ -170,4 +175,52 @@ Algorad cuenta con los mejores investigadores y developers del mundo que desarro
 
 # Gobernanza
 La Fundación Algorand, una organización sin fines de lucro que lanzó Algorand MainNet, gobierna la red de Algorand y está comprometida a continuar descentralizándola y poner más toma de decisiones en manos de la comunidad de Algorand en general.
+
+# ¿Qué es una dApp?
+Aplicaciones descentralizadas o dApps, son aplicaciones que se ejecutan en un entorno de procesamiento descentralizado como una blockchain.
+En las secciones anteriores descrubrimos algunas de las propiedades de blockchain y cómo ofrecen opciones para innovar en casos de uso que intercambian elementos de valor. 
+
+Una aplicación de pago, donde los usuarios pueden intercambiar activos entre sí, es una dApp muy simple. En este caso de uso, la transacción de pago es la única lógica on-chain requerida para transferir estos activos. 
+
+Pero, ¿cómo implementamos un escenario más complejo, como por ejemplo, pujar en una subasta?. Podríamos crear un sitio web, hacer que los usuarios inicien sesión, enviarnos sus ofertas y luego emitir la transferencia on-chain del artículo al mejor postor. 
+
+Entonces tendríamos que enviar el monto de la oferta más alta al vendedor y devolver el resto de los fondos al resto de los postores perdedores. El problema con esto, es que sus usuarios tendrían que confiar en que usted no saldrá corriendo con sus ofertas, que el código que escribió para retener fondos es sólido (probablemente sin llegar a verlo), que implementa excelentes prácticas de seguridad para que no lo hackeen, etc. 
+
+Esta implementación pierde por completo la marca de lo que promete blockchain y no estamos mejor usando blockchain que simplemente usando algunos de los sitios de subastas centralizados que ya existen. Si es una empresa de renombre, es probable que la gente confíe en usted, pero si es un desarrollador independiente, que está tratando de construir su reputación desde cero, tendrá dificultades para conseguir usuarios.
+
+ Y en el primer escenario, aún corre mucho riesgo para los atacantes que pueden saber que tiene una gran concentración de fondos. La moraleja de esta historia es que necesitamos una forma de implementar esta lógica de licitación, de forma segura, on-chain.
+
+ Aquí es donde entran en juego los smart contracts. 
+
+ # Smart Contracts
+ Los smart contracts son programas lógicos on-chain, que pueden implementar condiciones de transferencia de valor altamente personalizadas. Se pueden componer con todas las demás funciones de capa 1 (incluyendo Algos, NFT, tokens fungibles) para producir aplicaciones descentralizadas potentes y sofisticadas. 
+
+ Volvamos al escenario de licitación de subastas y usemos smart contracts para implementar licitaciones on-chain. Lo que esto significa es que en lugar de enviar ofertas a una cuenta controlada por una entidad centralizada, sujeta a ataques y puntos de falla, podemos enviar esas ofertas a un contrato inteligente, regido por código, que es abierto y verificable públicamente por cualquier persona. Y ese código no cambiará inesperadamente. Eso no significa que no pueda cambiar, pero si lo hace, será público y evidente para los usuarios. Y si no le gusta la idea de que pueda cambiar, incluso puede programarlo desde el principio para restringir ciertos cambios o rechazar todos los cambios en el contrato.
+
+ En resumen, se pasa de confiar en una entidad y esperar que haga lo que prometió, a confiar en el código y saber que hará lo que prometió, independientemente de los diferentes actores involucrados y las diferentes motivaciones que puedan tener.
+
+Es fundamental que el código del smart contract sea revisado y auditado en busca de fallas de seguridad. El código mal escrito que no tiene en cuenta todos los posibles vectores de ataque, por supuesto, no protegerá nada.
+
+# ¿Por dónde empezar para desarrollar con Algorand?
+Algorand proporciona una serie de SDKs para desarrollar sobre su blockchain: 
+
+- Python
+- JavaScript
+- Go
+- Java
+
+Los developers podemos escribir smart contracts en Python y podemos usar cualquiera de los cuatro SDK para conectar a on-chain assets o aplicaciones.
+
+Además, existen otras SDK soportadas por la comunidad, como Rust, C# y Dart. 
+
+# AlgoKit
+Algorand provee una herramienta para desarrollar smart contracts llamada **AlgoKit**
+
+AlgoKit es la herramienta principal utilizada por la comunidad de Algorand para desarrollar smart contracts en la blockchain de Algorand. Proporciona las capacidades para desarrollar, probar e implementar smart contracts de Algorand en minutos. 
+
+# Interactuando rapidamente con Algorand
+A continuación, veremos cómo podemos interactuar con Algorand rápidamente con el SDK para JavaScript. Para lograr esto, construiremos un pequeño proyecto en node, ver aquí.
+
+
+
 
