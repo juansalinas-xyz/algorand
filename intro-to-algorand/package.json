@@ -1,0 +1,17 @@
+{
+  "name": "simple-interact-with-algorand",
+  "version": "1.0.0",
+  "description": "A simple project to interact with Algorand",
+  "main": "index.js",
+  "repository": "https://github.com/jmsalinas88/algorand",
+  "author": "Juan M. Salinas",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.2.5",
+    "algosdk": "^2.3.0"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.3"
+  }
+}
