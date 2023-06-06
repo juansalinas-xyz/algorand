@@ -7,7 +7,7 @@ const skipPrompts = process.argv.includes('--skip-prompts');
 export function waitForInput() {
     if (skipPrompts === true) return new Promise((resolve) => { resolve(true); });
     return new Promise((resolve) => {
-      rl.question('Press enter to continue...', resolve);
+      rl.question('Presiona enter para continuar...', resolve);
     });
   }
 

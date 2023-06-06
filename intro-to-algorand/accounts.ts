@@ -8,6 +8,7 @@ async function main() {
   console.log('Mnemonic:', algosdk.secretKeyToMnemonic(account.sk));
   await waitForInput();
 
+  // Imprimir detalles de la cuenta, info.
   const algodClient = getTesnetAlgodClient()
   let accountInfo = await algodClient.accountInformation(account.addr).do();
   console.log('accountInfo', accountInfo);
