@@ -22,10 +22,10 @@
 - [El equipo y el ecosistema](#el-equipo-y-el-ecosistema)
 - [Gobernanza](#gobernanza)
 - [¿Qué es una dApp?](#qué-es-una-dapp)
-- [Smart Contracts](#smart-contracts)
 - [¿Por dónde empezar para desarrollar con Algorand?](#por-dónde-empezar-para-desarrollar-con-algorand)
 - [AlgoKit](#algokit)
-- [Interactuando rapidamente con Algorand](#interactuando-rapidamente-con-algorand)
+- [Interactuando rápidamente con Algorand](#interactuando-rápidamente-con-algorand)
+- [Smart Contracts](#smart-contracts)
 
 
 # ¿Qué es una blockchain?
@@ -192,14 +192,6 @@ Esta implementación pierde por completo la marca de lo que promete blockchain y
 
  Aquí es donde entran en juego los smart contracts. 
 
- # Smart Contracts
- Los smart contracts son programas lógicos on-chain, que pueden implementar condiciones de transferencia de valor altamente personalizadas. Se pueden componer con todas las demás funciones de capa 1 (incluyendo Algos, NFT, tokens fungibles) para producir aplicaciones descentralizadas potentes y sofisticadas. 
-
- Volvamos al escenario de licitación de subastas y usemos smart contracts para implementar licitaciones on-chain. Lo que esto significa es que en lugar de enviar ofertas a una cuenta controlada por una entidad centralizada, sujeta a ataques y puntos de falla, podemos enviar esas ofertas a un contrato inteligente, regido por código, que es abierto y verificable públicamente por cualquier persona. Y ese código no cambiará inesperadamente. Eso no significa que no pueda cambiar, pero si lo hace, será público y evidente para los usuarios. Y si no le gusta la idea de que pueda cambiar, incluso puede programarlo desde el principio para restringir ciertos cambios o rechazar todos los cambios en el contrato.
-
- En resumen, se pasa de confiar en una entidad y esperar que haga lo que prometió, a confiar en el código y saber que hará lo que prometió, independientemente de los diferentes actores involucrados y las diferentes motivaciones que puedan tener.
-
-Es fundamental que el código del smart contract sea revisado y auditado en busca de fallas de seguridad. El código mal escrito que no tiene en cuenta todos los posibles vectores de ataque, por supuesto, no protegerá nada.
 
 # ¿Por dónde empezar para desarrollar con Algorand?
 Algorand proporciona una serie de SDKs para desarrollar sobre su blockchain: 
@@ -218,8 +210,22 @@ Algorand provee una herramienta para desarrollar smart contracts llamada **AlgoK
 
 AlgoKit es la herramienta principal utilizada por la comunidad de Algorand para desarrollar smart contracts en la blockchain de Algorand. Proporciona las capacidades para desarrollar, probar e implementar smart contracts de Algorand en minutos. 
 
-# Interactuando rapidamente con Algorand
+# Interactuando rápidamente con Algorand
 A continuación, veremos cómo podemos interactuar con Algorand rápidamente con el SDK para JavaScript. Para lograr esto, construiremos un pequeño proyecto en nodejs, ver [aquí](https://github.com/jmsalinas88/algorand/tree/main/intro-to-algorand).
+
+# Smart Contracts
+Los smart contracts son programas lógicos on-chain, que pueden implementar condiciones de transferencia de valor altamente personalizadas. Se pueden componer con todas las demás funciones de capa 1 (incluyendo Algos, NFT, tokens fungibles) para producir aplicaciones descentralizadas potentes y sofisticadas. 
+
+Volvamos al escenario de licitación de subastas y usemos smart contracts para implementar licitaciones on-chain. Lo que esto significa es que en lugar de enviar ofertas a una cuenta controlada por una entidad centralizada, sujeta a ataques y puntos de falla, podemos enviar esas ofertas a un contrato inteligente, regido por código, que es abierto y verificable públicamente por cualquier persona. Y ese código no cambiará inesperadamente. Eso no significa que no pueda cambiar, pero si lo hace, será público y evidente para los usuarios. Y si no le gusta la idea de que pueda cambiar, incluso puede programarlo desde el principio para restringir ciertos cambios o rechazar todos los cambios en el contrato.
+
+En resumen, se pasa de confiar en una entidad y esperar que haga lo que prometió, a confiar en el código y saber que hará lo que prometió, independientemente de los diferentes actores involucrados y las diferentes motivaciones que puedan tener.
+
+Es fundamental que el código del smart contract sea revisado y auditado en busca de fallas de seguridad. El código mal escrito que no tiene en cuenta todos los posibles vectores de ataque, por supuesto, no protegerá nada.
+
+Para ver los detalles y la forma de escribir smart contracts en Algorand, ir [aquí](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts).
+
+
+
 
 
 
