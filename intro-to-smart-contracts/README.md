@@ -16,7 +16,7 @@ Al igual que los smart signatures, los smart contracts se escriben en Python usa
 El enfoque recomendado para escribir smart contracts es usar el SDK de Python con la biblioteca PyTeal.
 
 # Desarrollando nuestros primeros smart contracts
-   [Hello World](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/HelloWorld)
+- [Hello World](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/HelloWorld)
 
 
 
