@@ -4,7 +4,7 @@ from beaker import *
 from pyteal import *
 
 
-class AuctionState: 
+class AuctionState:
     highest_bidder: Final[GlobalStateValue] = GlobalStateValue(
         stack_type=TealType.bytes,
         default=Bytes(""),
