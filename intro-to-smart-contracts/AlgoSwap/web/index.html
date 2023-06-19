@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Algo Swap</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input {
+      margin-bottom: 10px;
+    }
+
+    .button {
+      margin-bottom: 10px;
+    }
+
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>#Algo Swap</h1>
+    <button id="connect" class="button">Conectar</button>
+    <br>
+    <div id='status'>Esperando a que la app sea creada...</div>
+    <br>
+    <label class="label" for="accounts">Cuenta: </label>
+    <select id="accounts" class="input"></select>
+    <br>
+    <button id="create" class="button" disabled>Crear</button>
+    <br>
+    <label class="label" for="asa-a">ID ASA A: </label>
+    <input type="number" id="asa-a" min="0" value="239692968" class="input">
+    <br>
+    <button id="startA" class="button" disabled>Enviar ASA A</button>
+    <br>
+    <label class="label" for="asa-b">ID ASA B: </label>
+    <input type="number" id="asa-b" min="0" value="241673679" class="input">
+    <br>
+    <button id="startB" class="button" disabled>Swap</button>
+    <br>
+    <button id="claimB" class="button"disabled>Reclamar asset B</button>
+  </div>
+</body>
+</html>

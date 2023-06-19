@@ -1,0 +1,249 @@
+#pragma version 8
+intcblock 0 1 4
+bytecblock 0x6173615f61 0x6173615f62
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l8
+txna ApplicationArgs 0
+pushbytes 0x2826b202 // "opt_into_asset(asset)void"
+==
+bnz main_l7
+txna ApplicationArgs 0
+pushbytes 0x2eca7577 // "receive_asset(axfer)void"
+==
+bnz main_l6
+txna ApplicationArgs 0
+pushbytes 0x1ec12bef // "claim_asset(asset)void"
+==
+bnz main_l5
+err
+main_l5:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub claimassetcaster_8
+intc_1 // 1
+return
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub receiveassetcaster_7
+intc_1 // 1
+return
+main_l7:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub optintoassetcaster_6
+intc_1 // 1
+return
+main_l8:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l10
+err
+main_l10:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+callsub create_0
+intc_1 // 1
+return
+
+// create
+create_0:
+proto 0 0
+bytec_0 // "asa_a"
+intc_0 // 0
+app_global_put
+bytec_1 // "asa_b"
+intc_0 // 0
+app_global_put
+retsub
+
+// opt_into_asset
+optintoasset_1:
+proto 1 0
+txn Sender
+global CreatorAddress
+==
+bnz optintoasset_1_l2
+bytec_1 // "asa_b"
+app_global_get
+intc_0 // 0
+==
+assert
+bytec_1 // "asa_b"
+frame_dig -1
+txnas Assets
+app_global_put
+b optintoasset_1_l3
+optintoasset_1_l2:
+bytec_0 // "asa_a"
+app_global_get
+intc_0 // 0
+==
+assert
+bytec_0 // "asa_a"
+frame_dig -1
+txnas Assets
+app_global_put
+optintoasset_1_l3:
+frame_dig -1
+txnas Assets
+global CurrentApplicationAddress
+callsub optintoassettxn_5
+retsub
+
+// receive_asset
+receiveasset_2:
+proto 1 0
+frame_dig -1
+gtxns AssetReceiver
+global CurrentApplicationAddress
+==
+assert
+txn Sender
+global CreatorAddress
+==
+bnz receiveasset_2_l2
+frame_dig -1
+gtxns XferAsset
+bytec_1 // "asa_b"
+app_global_get
+==
+assert
+b receiveasset_2_l3
+receiveasset_2_l2:
+frame_dig -1
+gtxns XferAsset
+bytec_0 // "asa_a"
+app_global_get
+==
+assert
+receiveasset_2_l3:
+retsub
+
+// claim_asset
+claimasset_3:
+proto 1 0
+txn Sender
+global CreatorAddress
+==
+bnz claimasset_3_l2
+bytec_0 // "asa_a"
+app_global_get
+intc_0 // 0
+!=
+assert
+bytec_0 // "asa_a"
+app_global_get
+txn Sender
+callsub transferasset_4
+b claimasset_3_l3
+claimasset_3_l2:
+bytec_1 // "asa_b"
+app_global_get
+intc_0 // 0
+!=
+assert
+bytec_1 // "asa_b"
+app_global_get
+txn Sender
+callsub transferasset_4
+claimasset_3_l3:
+retsub
+
+// transfer_asset
+transferasset_4:
+proto 2 0
+itxn_begin
+intc_2 // axfer
+itxn_field TypeEnum
+intc_1 // 1
+itxn_field AssetAmount
+frame_dig -2
+itxn_field XferAsset
+frame_dig -1
+itxn_field AssetReceiver
+intc_0 // 0
+itxn_field Fee
+itxn_submit
+retsub
+
+// opt_into_asset_txn
+optintoassettxn_5:
+proto 2 0
+itxn_begin
+intc_2 // axfer
+itxn_field TypeEnum
+intc_0 // 0
+itxn_field Fee
+frame_dig -1
+itxn_field AssetReceiver
+frame_dig -2
+itxn_field XferAsset
+intc_0 // 0
+itxn_field AssetAmount
+itxn_submit
+retsub
+
+// opt_into_asset_caster
+optintoassetcaster_6:
+proto 0 0
+intc_0 // 0
+txna ApplicationArgs 1
+intc_0 // 0
+getbyte
+frame_bury 0
+frame_dig 0
+callsub optintoasset_1
+retsub
+
+// receive_asset_caster
+receiveassetcaster_7:
+proto 0 0
+intc_0 // 0
+txn GroupIndex
+intc_1 // 1
+-
+frame_bury 0
+frame_dig 0
+gtxns TypeEnum
+intc_2 // axfer
+==
+assert
+frame_dig 0
+callsub receiveasset_2
+retsub
+
+// claim_asset_caster
+claimassetcaster_8:
+proto 0 0
+intc_0 // 0
+txna ApplicationArgs 1
+intc_0 // 0
+getbyte
+frame_bury 0
+frame_dig 0
+callsub claimasset_3
+retsub

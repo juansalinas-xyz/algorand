@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Algo Subasta</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input {
+      margin-bottom: 10px;
+    }
+
+    .button {
+      margin-bottom: 10px;
+    }
+
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>#Algo Subasta</h1>
+    <button id="connect" class="button">Conectar</button>
+    <br>
+    <div id='status'>Esperando a que la app sea creada...</div>
+    <br>
+    <label class="label" for="accounts">Cuenta: </label>
+    <select id="accounts" class="input"></select>
+    <button id="create" class="button" disabled>Crear</button>
+    <br>
+    <label class="label" for="asa">ID ASA: </label>
+    <input type="number" id="asa" min="0" value="239692968" class="input">
+    <br>
+    <label class="label" for="bidAmount">Precio base (Microalgos)</label>
+    <input type="number" id="startAmount" min="0" value="10000" class="input">
+    <br>
+    <label class="label" for="length">Duracion</label>
+    <input type="number" id="length" min="0" value="60" class="input">
+    <br>
+    <button id="start" class="button" disabled>Iniciar Subasta</button>
+    <br>
+    <label class="label" for="bidAmount">Ingresar oferta (Microalgos)</label>
+    <input type="number" id="bidAmount" min="0" value="20000" class="input">
+    <br>
+    <button id="bid" class="button" disabled>Ofertar</button>
+    <br>
+    <button id="claim-asset" class="button">Eres el ganador? - Reclamar asset</button>
+    <br>
+    <button id="claim-bid" class="button">Eres el creador de la oferta? - Reclamar fondos de la Oferta</button>
+    <br>
+    <button id="claim-asset-without-bids" class="button">Eres el creador de la oferta? - Reclamar asset (sin ofertas) </button>
+  </div>
+</body>
+
+</html>
