@@ -1,5 +1,5 @@
 {
-    "name": "Auction",
+    "name": "AuctionApp",
     "methods": [
         {
             "name": "opt_into_asset",
@@ -55,10 +55,6 @@
                 {
                     "type": "asset",
                     "name": "asset"
-                },
-                {
-                    "type": "account",
-                    "name": "asset_creator"
                 }
             ],
             "returns": {
@@ -66,7 +62,19 @@
             }
         },
         {
-            "name": "delete",
+            "name": "claim_asset_without_bids",
+            "args": [
+                {
+                    "type": "asset",
+                    "name": "asset"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "claim_bid",
             "args": [],
             "returns": {
                 "type": "void"

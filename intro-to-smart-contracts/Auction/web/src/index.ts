@@ -14,10 +14,11 @@ let auctionAppId: number
 let auctionApp: ApplicationClient
 
 const accountsMenu = document.getElementById('accounts') as HTMLSelectElement
-const amountInput = document.getElementById('amount') as HTMLInputElement
 const asaInput = document.getElementById('asa') as HTMLInputElement
-const asaAmountInput = document.getElementById('asa-amount') as HTMLInputElement
-const buttonIds = ['create', 'connect', 'start', 'bid', 'claim-bid', 'claim-asset']
+const startAmountInput = document.getElementById('startAmount') as HTMLInputElement
+const lengthInput = document.getElementById('length') as HTMLInputElement
+const bidAmountInput = document.getElementById('bidAmount') as HTMLInputElement
+const buttonIds = ['create', 'connect', 'start', 'bid', 'claim-bid', 'claim-asset', 'claim-asset-without-bids']
 const buttons: { [key: string]: HTMLButtonElement } = {}
 
 buttonIds.forEach(id => {
@@ -80,21 +81,26 @@ buttons.start.onclick = async () => {
   })
   atc.addTransaction({ txn: payment, signer })
 
-  // Opt app into ASA
-  atc.addMethodCall(
-    {
-      appID: auctionAppId,
-      method: algosdk.getMethodByName(contract.methods, 'opt_into_asset'),
-      sender,
-      signer,
-      suggestedParams: { ...suggestedParams, fee: 2_000, flatFee: true },
-      methodArgs: [asa]
-    })
+  const state = (await algodClient.getApplicationByID(auctionAppId).do()).params['global-state']
+  const readableState = Utils.getReadableState(state)
+  const asaId = readableState.asa_id.number
+
+  if(!asaId){
+    atc.addMethodCall(
+      {
+        appID: auctionAppId,
+        method: algosdk.getMethodByName(contract.methods, 'opt_into_asset'),
+        sender,
+        signer,
+        suggestedParams: { ...suggestedParams, fee: 2_000, flatFee: true },
+        methodArgs: [asa]
+      })
+  }
 
   const axfer = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
     suggestedParams,
     from: sender,
-    amount: asaAmountInput.valueAsNumber,
+    amount: 1,
     to: algosdk.getApplicationAddress(auctionAppId),
     assetIndex: asa
   })
@@ -107,7 +113,7 @@ buttons.start.onclick = async () => {
       sender,
       signer,
       suggestedParams: await algodClient.getTransactionParams().do(),
-      methodArgs: [amountInput.valueAsNumber, 36_000, { txn: axfer, signer }]
+      methodArgs: [startAmountInput.valueAsNumber, lengthInput.valueAsNumber, { txn: axfer, signer }]
     })
 
   await atc.execute(algodClient, 3)
@@ -131,7 +137,7 @@ buttons.bid.onclick = async () => {
 
   const payment = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
     suggestedParams,
-    amount: amountInput.valueAsNumber,
+    amount: bidAmountInput.valueAsNumber,
     from: sender.addr,
     to: algosdk.getApplicationAddress(auctionAppId)
   })
@@ -157,7 +163,48 @@ buttons.bid.onclick = async () => {
   document.getElementById('status').innerHTML = `Oferta recibida!  <a href='https://testnet.algoscan.app/app/${auctionAppId}'>Ver</a>`
 }
 
+buttons['claim-asset'].onclick = async () => {
+  document.getElementById('status').innerHTML = 'Ganador Reclamando asset ...'
+  const sender = accountsMenu.selectedOptions[0].value
+  const suggestedParams = await algodClient.getTransactionParams().do()
+  suggestedParams.fee = 2_000
+  suggestedParams.flatFee = true
+  const atc = new algosdk.AtomicTransactionComposer()
+
+  const state = (await algodClient.getApplicationByID(auctionAppId).do()).params['global-state']
+  const readableState = Utils.getReadableState(state)
+  const asa = readableState.asa_id.number
+  
+  const optInTxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
+      from: sender,
+      to: sender,
+      suggestedParams,
+      assetIndex: asa,
+      amount: 0,
+    });
+  
+  atc.addTransaction({ txn: optInTxn, signer })
+
+  atc.addMethodCall(
+    {
+      appID: auctionAppId,
+      methodArgs: [asa],
+      method: algosdk.getMethodByName(contract.methods, 'claim_asset'),
+      sender: accountsMenu.selectedOptions[0].value,
+      signer,
+      suggestedParams
+    }
+  )
+  atc.execute(algodClient, 3)
+
+  document.getElementById('status').innerHTML = `Asset enviado! <a href='https://testnet.algoscan.app/app/${auctionAppId}'>Ver</a>`
+  buttons.start.disabled = false
+}
+
 buttons['claim-bid'].onclick = async () => {
+
+  document.getElementById('status').innerHTML = 'Reclamando fondos de la subasta ...'
+
   const suggestedParams = await algodClient.getTransactionParams().do()
   suggestedParams.fee = 2_000
   suggestedParams.flatFee = true
@@ -175,27 +222,34 @@ buttons['claim-bid'].onclick = async () => {
   )
 
   atc.execute(algodClient, 3)
+
+  document.getElementById('status').innerHTML = `Fondos enviados! <a href='https://testnet.algoscan.app/app/${auctionAppId}'>Ver</a>`
+  buttons.start.disabled = false
+
 }
 
-buttons['claim-asset'].onclick = async () => {
+buttons['claim-asset-without-bids'].onclick = async () => {
+
+  document.getElementById('status').innerHTML = 'Creador de la subasta reclamando asset sin ofertas...'
+
   const suggestedParams = await algodClient.getTransactionParams().do()
   suggestedParams.fee = 2_000
   suggestedParams.flatFee = true
-
   const atc = new algosdk.AtomicTransactionComposer()
-
   const asa = asaInput.valueAsNumber
-  const asaCreator = (await algodClient.getAssetByID(asa).do()).params.creator
   atc.addMethodCall(
     {
       appID: auctionAppId,
-      methodArgs: [asa, asaCreator],
-      method: algosdk.getMethodByName(contract.methods, 'claim_asset'),
+      methodArgs: [asa],
+      method: algosdk.getMethodByName(contract.methods, 'claim_asset_without_bids'),
       sender: accountsMenu.selectedOptions[0].value,
       signer,
       suggestedParams
     }
   )
-
   atc.execute(algodClient, 3)
+
+  document.getElementById('status').innerHTML = `Asset enviado! <a href='https://testnet.algoscan.app/app/${auctionAppId}'>Ver</a>`
+  buttons.start.disabled = false
+
 }
