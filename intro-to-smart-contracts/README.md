@@ -17,7 +17,8 @@ El enfoque recomendado para escribir smart contracts es usar el SDK de Python co
 
 # Desarrollando nuestros primeros smart contracts
 - [Hello World](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/HelloWorld)
-- [Auction](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/Auction)
+- [Auction](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/Auction) - [Demo](https://www.loom.com/share/54b7620a6acd43b5bab7d8b37a977854) - [App](https://testnet.algoscan.app/app/245358739)
+- [AlgoSwap](https://github.com/jmsalinas88/algorand/tree/main/intro-to-smart-contracts/AlgoSwap) - [Demo](https://www.loom.com/share/760ee7d8774d49f899744264c4325482) - [App](https://testnet.algoscan.app/app/245377555)
 
 
 
